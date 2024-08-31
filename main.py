@@ -3,7 +3,7 @@ def main():
     book_text = read_book(book_path)
     word_count = count_words(book_text)
     print(f"word count: {word_count}")
-    char_dict = count_characters(book_text)
+    char_dict = get_chars_dict(book_text)
     print(f"char count: {char_dict}")
     
     
@@ -18,16 +18,16 @@ def count_words(text):
     return len(words)
 
 
-def count_characters(text):
+def get_chars_dict(text):
     # count the number of characters repeated in the text and returns a dictionary of char -> count
-    char_dict = {}
-    for char in text:
-        char = char.lower()
-        if char in char_dict:
-            char_dict[char] += 1
+    chars = {}
+    for c in text:
+        c = c.lower()
+        if c in chars:
+            chars[c] += 1
         else:
-            char_dict[char] = 1
-    return char_dict
+            chars[c] = 1
+    return chars
 
 
 if __name__ == '__main__':
