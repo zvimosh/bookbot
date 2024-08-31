@@ -22,6 +22,7 @@ def count_characters(text):
     # count the number of characters repeated in the text and returns a dictionary of char -> count
     char_dict = {}
     for char in text:
+        char = char.lower()
         if char in char_dict:
             char_dict[char] += 1
         else:
